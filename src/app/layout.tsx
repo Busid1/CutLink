@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/navbar";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: "CutLink | URL shortener",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <div className="h-screen">
           <NavBar />
           {children}
+          <Analytics/>
         </div>
       </body>
     </html>
