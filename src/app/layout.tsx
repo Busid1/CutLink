@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./components/navbar";
 import { Analytics } from "@vercel/analytics/react"
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "CutLink | URL shortener",
@@ -18,15 +19,15 @@ export default function RootLayout({
       <head>
         <link rel="shortcut icon"
           href="/images/cutlink-icon.ico" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <Script src="https://kit.fontawesome.com/ae5f71a2c9.js" crossOrigin="anonymous" strategy="beforeInteractive"></Script>      
       </head>
       <body
       >
-        <div className="h-screen">
+        <section id="section">
           <NavBar />
           {children}
           <Analytics/>
-        </div>
+        </section>
       </body>
     </html>
   );

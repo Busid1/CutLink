@@ -52,12 +52,12 @@ export default function Input() {
 
     return (
         <div>
-            <form id="formBox" className="mt-32 bg-neutral-700 bg-opacity-70 rounded-xl px-5 py-6 shadow-xl" onSubmit={(e) => handleSubmit(e)}>
-                <label className="text-white font-medium text-xl">Paste the long url below</label>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <label className="text-white font-medium text-xl">Paste the long URL below</label>
                 <div className="flex flex-col gap-10 mt-3">
                     <div className="flex flex-col gap-7 items-center relative">
-                        <input type="search" onChange={(e) => handleOnChange(e.target.value)} value={longURL} id="default-search" className="block w-full p-3 ps-5 text-sm text-gray-900 border border-gray-300 rounded-full dark:bg-neutral-900 focus:border-blue-600 dark:border-gray-400 dark:placeholder-gray-400 shadow-sm dark:text-white" placeholder="Example: https://google.es" />
-                        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 transition duration-200 dark:focus:ring-blue-800 w-6/12 shadow-lg">Shorten url</button>
+                        <input type="search" onChange={(e) => handleOnChange(e.target.value)} value={longURL} id="default-search" className="block w-full p-5 ps-5 text-md max-md:text-sm text-black rounded-full bg-white dark:placeholder-gray-500 shadow-sm" placeholder="Example: https://google.es" />
+                        <button type="submit" className="text-white absolute right-0 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium max-md:text-sm rounded-e-full text-md py-5 dark:bg-blue-600 dark:hover:bg-blue-700 transition duration-200 dark:focus:ring-blue-800 w-3/12 shadow-lg">Shorten</button>
                     </div>
                     <div className="flex items-center gap-5 justify-evenly">
                         {
@@ -67,17 +67,13 @@ export default function Input() {
                                 shortURL ?
                                     <div className="flex flex-wrap items-center w-full gap-4">
                                         <span className="text-lg text-nowrap text-white font-semibold">Short URL:</span>
-                                        <a target="_blank" className="flex justify-center truncate items-center gap-3 text-gray-600 bg-white rounded-lg px-3 py-2 hover:underline font-semibold shadow-lg" href={`${BASE_URL}/${shortURL}`}>
+                                        <a target="_blank" className="flex justify-center truncate items-center gap-3 text-gray-600 bg-white rounded-lg p-3 hover:underline font-semibold shadow-lg" href={`${BASE_URL}/${shortURL}`}>
                                             <span className="text-nowrap truncate" ref={shortURLRef}>{BASE_URL}{shortURL}</span>
-                                            <span className="material-symbols-outlined scale-75">
-                                                open_in_new
-                                            </span>
+                                            <i className="fas fa-external-link-alt"></i>
                                         </a>
-                                        <button onClick={handleCopyToClipboard} type="button" className="bg-neutral-900 hover:bg-neutral-800 transition duration-200 gap-2 px-3 py-2 ring-1 ring-neutral-800 focus:ring-gray-200 rounded-lg flex items-center shadow-lg">
+                                        <button onClick={handleCopyToClipboard} type="button" className="bg-neutral-900 hover:bg-neutral-800 transition duration-200 gap-2 p-3 ring-1 ring-neutral-800 focus:ring-gray-200 rounded-lg flex items-center shadow-lg">
                                             <span className="text-sm">Copy</span>
-                                            <span className="material-symbols-outlined scale-75">
-                                                content_copy
-                                            </span>
+                                            <i className="far fa-copy"></i>
                                         </button>
                                     </div>
                                     : null
