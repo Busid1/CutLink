@@ -14,11 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="shortcut icon" href="/images/cutlink-icon.ico" />
-      </head>
       <body>
-        <main>{children}</main>
+        {children}
         <Analytics />
       </body>
     </html>

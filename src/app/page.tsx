@@ -9,9 +9,9 @@ export default function App() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-600/10 pointer-events-none"></div>
       <div className="relative z-10 flex flex-col min-h-screen">
         <NavBar />
-        <div className="flex-grow container max-w-4xl mx-auto max-md:px-5">
+        <main className="flex-grow container max-w-4xl mx-auto max-md:px-5">
           <MainContent />
-        </div>
+        </main>
         <Footer />
       </div>
     </div>

@@ -74,10 +74,10 @@ export default function InputCard() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <form onSubmit={handleShortenUrl} className="flex flex-col sm:flex-row gap-3">
                         <div className="flex-1">
                             <Input
-                            id="longURLInput"
+                                id="longURLInput"
                                 type="url"
                                 placeholder="https://ejemplo.com/mi-enlace-muy-largo-que-necesita-ser-acortado"
                                 value={longURL}
@@ -86,7 +86,7 @@ export default function InputCard() {
                             />
                         </div>
                         <Button
-                            onClick={(e) => handleShortenUrl(e as any)}
+                            type="submit"
                             disabled={isLoading}
                             className="h-12 px-8 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-200"
                         >
@@ -103,8 +103,9 @@ export default function InputCard() {
                                 </div>
                             )}
                         </Button>
-                    </div>
+                    </form>
                 </CardContent>
+
             </Card>
             {shortURL ?
                 <ShortURLCard longURL={longURL} shortURL={shortURL} isCopiedUrl={isCopiedUrl} handleCopyToClipboard={handleCopyToClipboard} /> : <div className="text-center py-12 max-md:py-2">

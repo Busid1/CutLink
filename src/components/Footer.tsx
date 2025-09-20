@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="flex justify-center pb-4 max-md:px-5 max-md:pt-8">
       <div className="bg-white px-5 py-2 rounded-lg flex justify-between flex-wrap max-md:gap-2 max-md:justify-center max-md:text-sm w-full max-w-4xl items-center shadow-md">
-        <p className="text-gray-800 font-medium">
+        <p className="text-gray-800 font-semibold">
           &copy; 2025 CutLink. Creado por Busid.
         </p>
         <ul className="flex gap-4 items-center text-sm">
